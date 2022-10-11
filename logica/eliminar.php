@@ -13,7 +13,7 @@ function eliminar()
     $conexion = conectar();
     $id = $_GET['id'];
     $enunciado = "DELETE FROM datos WHERE id = '$id'";
-    $elimnar = elimiar($conexion, $enunciado);
+    $elimnar = devolverConsulta($conexion, $enunciado);
 
     if ($elimnar) {
         header("Location: ../presentacion/indiceVista.php");

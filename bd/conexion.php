@@ -11,12 +11,6 @@ function conectar()
     return $conexion;
 }
 
-function elimiar($conexion, $enunciado)
-{
-    $consulta = mysqli_query($conexion, $enunciado);
-    return $consulta;
-}
-
 function devolverConsulta($conexion, $enunciado)
 {
     $consulta = mysqli_query($conexion, $enunciado);
