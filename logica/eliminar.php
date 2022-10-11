@@ -1,18 +1,23 @@
 <?php
 
-function eliminarUsuario($id)
-{
-    include("../bd/conexion.php");
-    $conexion = conectar();
-
-    $sql = "DELETE FROM datos WHERE id='$id'";
-    $query = mysqli_query($conexion, $sql);
-
-    if ($query) {
-        Header("Location: alumno.php");
-    }
-}
+include("../bd/conexion.php");
 
 if (isset($_GET['id'])) {
-   eliminarUsuario($_GET['id']);
+    eliminar();
+} else {
+    echo "fallo en la conexion con la bd";
+}
+
+function eliminar()
+{
+    $conexion = conectar();
+    $id = $_GET['id'];
+    $enunciado = "DELETE FROM datos WHERE id = '$id'";
+    $elimnar = elimiar($conexion, $enunciado);
+
+    if ($elimnar) {
+        header("Location: ../presentacion/indiceVista.php");
+    } else {
+        echo "no se pudo eliminar";
+    }
 }

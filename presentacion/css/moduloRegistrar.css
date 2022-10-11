@@ -58,6 +58,11 @@ input[type="submit"] {
   color: #fff;
 }
 
+.container{
+  height: 100vh;
+  padding: 5rem;
+}
+
 .btn-back {
   width: 100%;
   display: flex;

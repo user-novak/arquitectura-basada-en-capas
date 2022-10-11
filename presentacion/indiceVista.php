@@ -1,5 +1,7 @@
 <?php
 include("../logica/indice.php");
+$numFilas = numeroFilas();
+$empleados = todosDatos();
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +13,8 @@ include("../logica/indice.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>app de registro</title>
     <link rel="stylesheet" href="css/moduloIndice.css">
+    <script src="js/confirmacion.js" defer></script>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -29,17 +33,22 @@ include("../logica/indice.php");
 
             <tbody>
                 <?php
-                for ($i = 1; $i <= 13; $i++) { ?>
+                foreach ($empleados as $empleado) { ?>
                     <tr>
-                        <th><?php
-                            $fila = devolverUsuario($i);
+                        <td><?php
+                            $fila = devolverUsuario($empleado['id']);
                             echo $fila['name']
-                            ?></th>
-                        <th><?php
-                            $fila = devolverUsuario($i);
+                            ?></td>
+                        <td><?php
+                            $fila = devolverUsuario($empleado['id']);
                             echo $fila['email']
-                            ?></th>
-                        <th><a href="../logica/eliminar.php?id=<?$i?>">eliminar</a></th>
+                            ?></td>
+                        <td>
+                            <a class="delete_link" href="../logica/eliminar.php?id=<?php $fila = devolverUsuario($empleado['id']);
+                                                                                    echo $fila['id'] ?>">
+                                eliminar
+                            </a>
+                        </td>
                     </tr>
                 <?php  }
                 ?>
