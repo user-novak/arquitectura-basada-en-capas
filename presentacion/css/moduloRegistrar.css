@@ -43,6 +43,11 @@ input[type="submit"] {
   border: none;
 }
 
+.container {
+  height: 100vh;
+  padding: 5rem;
+}
+
 .ok {
   text-align: center;
   width: 100%;
@@ -56,11 +61,6 @@ input[type="submit"] {
   padding: 12px;
   background-color: #a22;
   color: #fff;
-}
-
-.container{
-  height: 100vh;
-  padding: 5rem;
 }
 
 .btn-back {

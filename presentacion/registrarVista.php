@@ -15,7 +15,7 @@ include("../logica/registrar.php");
 </head>
 
 <body>
-    <section class="container">
+    <div class="container">
         <form method="post">
             <h1>registrar empleado</h1>
             <input type="text" name="name" placeholder="Nombre completo" autocomplete="off">
@@ -23,7 +23,7 @@ include("../logica/registrar.php");
             <input type="submit" name="register">
         </form>
         <a class="btn-back" href="indiceVista.php">regresar al inicio</a>
-    </section>
+    </div>
 </body>
 
 </html>

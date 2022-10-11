@@ -1,6 +1,5 @@
 <?php
 include("../logica/indice.php");
-$numFilas = numeroFilas();
 $empleados = todosDatos();
 ?>
 
@@ -36,16 +35,13 @@ $empleados = todosDatos();
                 foreach ($empleados as $empleado) { ?>
                     <tr>
                         <td><?php
-                            $fila = devolverUsuario($empleado['id']);
-                            echo $fila['name']
+                            echo $empleado['name'];
                             ?></td>
                         <td><?php
-                            $fila = devolverUsuario($empleado['id']);
-                            echo $fila['email']
+                            echo $empleado['email'];
                             ?></td>
                         <td>
-                            <a class="delete_link" href="../logica/eliminar.php?id=<?php $fila = devolverUsuario($empleado['id']);
-                                                                                    echo $fila['id'] ?>">
+                            <a class="delete_link" href="../logica/eliminar.php?id=<?php echo $empleado['id']; ?>">
                                 eliminar
                             </a>
                         </td>
